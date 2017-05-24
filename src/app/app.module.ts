@@ -1,9 +1,19 @@
+import { ItemDetailsModule } from './item-details/item-details.module';
+/* Angular Modules */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
+
+/* Third-party Modules */
+
+/* My Modules */
 import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { FeedsModule } from './feeds/feeds.module';
+import { ServicesModule } from './shared/services/services.module';
+
+
+/* My Components */
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,11 +22,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule,
+    FeedsModule,
+    ItemDetailsModule,
+    ServicesModule.forRoot()
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
